@@ -4,9 +4,7 @@ from main_ui import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 
 import requests
 from bs4 import BeautifulSoup
@@ -32,7 +30,6 @@ _username=""
 
 _cookie=""
 
-_secret=""
 ###設定區結束###
 
 def setup():
@@ -44,15 +41,29 @@ def setup():
     sleep(1)
     login()
 
-"""
 def login():
-    browser = webdriver.Chrome("./chromedriver")
+    opts = Options()
+    opts.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0")
+    try:
+        browser = webdriver.Chrome("./chromedriver.exe",chrome_options=opts)
+        print("Windows")
+    except:
+        try:
+            browser = webdriver.Chrome("./chromedriver_linux",chrome_options=opts)
+            print("Linux")
+        except:
+            browser = webdriver.Chrome("./chromedriver_mac",chrome_options=opts)
+            print("Mac")
     browser.get("https://zerojudge.tw/Login")
     while not browser.current_url in ["https://zerojudge.tw/#", "https://zerojudge.tw/"]:
         stat='wait'
-    _cookies = browser.get_cookies()[0]['value']
-    browser.close() 
-"""
+    browser.get("https://zerojudge.tw/UserStatistic")
+    global _cookie
+    _cookie = browser.get_cookies()[0]['value']
+    global _username
+    _username = browser.find_elements_by_tag_name('a')[14].get_attribute('title')
+    browser.close()
+
 def fn_pop_problem(__problem_id):
     webbrowser.open_new(_zg_get_problem_url+__problem_id)
 
@@ -69,16 +80,14 @@ def fn_submit_problem(__problem_id,__code):
     ,'Cookie': 'JSESSIONID='+_cookie
     }
     __data={'action':'SubmitCode','language':'CPP','code':__code,'contestid':'0','problemid':__problem_id}
-    requests.post(_zg_submit_url,headers=__header,cookies={'JSESSIONID':_cookie},data=__data)
+    #requests.post(_zg_submit_url,headers=__header,cookies={'JSESSIONID':_cookie},data=__data)
     return fn_get_result(__problem_id)
 
 def fn_get_result(__problem_id):
     __result=requests.get(_zg_result_url+_username,cookies={'JSESSIONID':_cookie})
     __soup = BeautifulSoup(__result.text, "lxml")
     __judge_id=__soup.find(id="solutionid").text
-    __result=requests.get(_zg_judgement_url+__judge_id+'&_='+_secret,cookies={'JSESSIONID':_cookie})
-    while json.loads(__result.text)[0]['hint']=='':
-        __result=requests.get(_zg_judgement_url+__judge_id+'&_='+_secret,cookies={'JSESSIONID':_cookie})        
+    __result=requests.get(_zg_judgement_url+__judge_id,cookies={'JSESSIONID':_cookie})
     __out=str()
     __num=int(1)
     for i in json.loads(__result.text):    
@@ -143,7 +152,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.result_4.setPlainText(_out)
 
 if __name__ == "__main__":
-    #setup()
+    setup()
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
