@@ -11,7 +11,7 @@ APCS實作題模擬器
 <hr>
 
 ```
-pip3 install PyQt5 selenium requests BeautifulSoup4
+pip3 install PyQt5 selenium requests BeautifulSoup4 lxml
 python3 main.py
 ```
 <h4>輸入要模擬的題目，等等會有登入的form跳出來</h4>
