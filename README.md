@@ -8,7 +8,7 @@ run with python3<br>
 目前只支援 Submit C++<br>
 <hr>
 下載執行檔(Realease):<br>
-For Windows : ![Windows_Realease](https://github.com/chenliTW/apcs-sim/releases/tag/v0.8.0)
+For Windows : (https://github.com/chenliTW/apcs-sim/releases/tag/v0.8.0)
 <hr>
 <img src="./img/0.png">
 <hr>
