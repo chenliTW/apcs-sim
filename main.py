@@ -47,7 +47,7 @@ def login():
     opts = Options()
     opts.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0")
     try:
-        browser = webdriver.Chrome("./chromedriver.exe",chrome_options=opts)
+        browser = webdriver.Chrome("./chromedriver.exe",options=opts)
         print("Windows")
     except:
         try:

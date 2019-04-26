@@ -2,11 +2,12 @@
 
 # Form implementation generated from reading ui file 'main_ui.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.12.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -185,14 +186,14 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "程式碼預覽："))
         self.choose_file_1.setText(_translate("MainWindow", "選擇檔案"))
         self.label_2.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第一題</span></p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第一題</span></p></body></html>"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">第一題</span></p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "測試結果："))
         self.label_4.setText(_translate("MainWindow", "檔案 ："))
         self.label_5.setText(_translate("MainWindow", "程式語言："))
         self.program_lang_1.setItemText(0, _translate("MainWindow", "C++"))
         self.view_problem_1.setText(_translate("MainWindow", "看題目"))
         self.label_6.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第一題</span></p></body></html>"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第二題</span></p></body></html>"))
+        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">第二題</span></p></body></html>"))
         self.label_7.setText(_translate("MainWindow", "程式語言："))
         self.label_8.setText(_translate("MainWindow", "測試結果："))
         self.label_9.setText(_translate("MainWindow", "程式碼預覽："))
@@ -201,7 +202,7 @@ class Ui_MainWindow(object):
         self.view_problem_2.setText(_translate("MainWindow", "看題目"))
         self.label_10.setText(_translate("MainWindow", "檔案 ："))
         self.label_11.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第一題</span></p></body></html>"))
-        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第三題</span></p></body></html>"))
+        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">第三題</span></p></body></html>"))
         self.label_12.setText(_translate("MainWindow", "程式語言："))
         self.label_13.setText(_translate("MainWindow", "測試結果："))
         self.label_14.setText(_translate("MainWindow", "程式碼預覽："))
@@ -210,7 +211,7 @@ class Ui_MainWindow(object):
         self.view_problem_3.setText(_translate("MainWindow", "看題目"))
         self.label_15.setText(_translate("MainWindow", "檔案 ："))
         self.label_16.setToolTip(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第一題</span></p></body></html>"))
-        self.label_16.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt;\">第四題</span></p></body></html>"))
+        self.label_16.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">第四題</span></p></body></html>"))
         self.label_17.setText(_translate("MainWindow", "程式語言："))
         self.label_18.setText(_translate("MainWindow", "測試結果："))
         self.label_19.setText(_translate("MainWindow", "程式碼預覽："))
@@ -219,4 +220,5 @@ class Ui_MainWindow(object):
         self.view_problem_4.setText(_translate("MainWindow", "看題目"))
         self.label_20.setText(_translate("MainWindow", "檔案 ："))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
+
 
