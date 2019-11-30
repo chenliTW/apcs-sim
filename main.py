@@ -51,7 +51,7 @@ def login():
         print("Windows")
     except:
         try:
-            browser = webdriver.Chrome("./chromedriver_linux",chrome_options=opts)
+            browser = webdriver.Firefox(executable_path="./geckodriver")#",chrome_options=opts)
             print("Linux")
         except:
             browser = webdriver.Chrome("./chromedriver_mac",chrome_options=opts)
