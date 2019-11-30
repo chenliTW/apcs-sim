@@ -14,7 +14,7 @@ For Windows : https://github.com/chenliTW/apcs-sim/releases/tag/v0.8.0
 <hr>
 
 ```
-pip3 install PyQt5 selenium requests BeautifulSoup4 lxml
+pip3 install pipenv
 python3 main.py
 ```
 <h4>輸入要模擬的題目，等等會有登入的form跳出來</h4>
